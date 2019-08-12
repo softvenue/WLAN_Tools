@@ -60,5 +60,46 @@ namespace WLAN_Tools
                 return "OWN Machine";
             }
         }
+
+
+        public string MacAdd = "";
+        private void PingCompleted(object sender, PingCompletedEventArgs e)
+        {
+            string ip = (string)e.UserState;
+            if (e.Reply != null && e.Reply.Status == IPStatus.Success)
+            {
+                string hostname = GetHostName(ip);
+                string macaddres = GetMacAddress(ip);
+                string[] arr = new string[3];
+
+                
+                arr[0] = ip;
+                arr[1] = hostname;
+                arr[2] = macaddres;
+
+
+                
+                string GetMac = arr[0].ToString();
+                try
+                {
+                    if (MacAdd != GetMac)
+                    {
+                        Console.WriteLine(arr[0].ToString());
+                        Console.WriteLine(arr[2].ToString());
+                        if (arr[1] != null)
+                        {
+                            Console.WriteLine(arr[1].ToString());
+                        }
+                        Console.WriteLine("__________________");
+                    }
+
+                    MacAdd = arr[0].ToString();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
     }
 }
