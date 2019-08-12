@@ -135,7 +135,9 @@ namespace WLAN_Tools
                     }
                     catch
                     {
-                        
+                        // Do nothing and let it try again until the attempts are exausted.
+                        // Exceptions are thrown for normal ping failurs like address lookup
+                        // failed.  For this reason we are supressing errors. 
                     }
                 }).Start();
             }
