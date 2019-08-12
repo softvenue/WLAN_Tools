@@ -15,5 +15,23 @@ namespace WLAN_Tools
         static void Main(string[] args)
         {
         }
+
+        public string GetHostName(string ipAddress)
+        {
+            try
+            {
+                IPHostEntry entry = Dns.GetHostEntry(ipAddress);
+                if (entry != null)
+                {
+                    return entry.HostName;
+                }
+            }
+            catch (SocketException e)
+            {
+                Console.WriteLine(e.Message.ToString());
+            }
+
+            return null;
+        }
     }
 }
