@@ -161,12 +161,16 @@ namespace WLAN_Tools
 
         public void Ping_all()
         {
-            string gate_ip = NetworkGateway();          
+            string gate_ip = NetworkGateway();
+
+            //Extracting and pinging all other ip's.
             string[] array = gate_ip.Split('.');
 
             for (int i = 2; i <= 255; i++)
             {
-                string ping_var = array[0] + "." + array[1] + "." + array[2] + "." + i;             
+                string ping_var = array[0] + "." + array[1] + "." + array[2] + "." + i;
+
+                //time in milliseconds 
                 Ping(ping_var, 4, 4000);
             }
 
