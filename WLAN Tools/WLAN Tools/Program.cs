@@ -14,6 +14,25 @@ namespace WLAN_Tools
     {
         static void Main(string[] args)
         {
+            try
+            {
+                Console.WriteLine("Rooter IP : {0}", NetworkGateway().ToString());
+                Program s = new Program();
+                s.Ping_all();
+
+            }
+            catch (System.NullReferenceException exn)
+            {
+                Console.WriteLine(exn.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.Read();
+            }
         }
 
         public string GetHostName(string ipAddress)
