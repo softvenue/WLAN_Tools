@@ -20,7 +20,7 @@ Downloads for building and running applications with .NET Framework 4.5 and you 
 
 ## License
 
-The GcodeFirst  is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+The WLAN-Tools is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
 ## Feedback
 If you have any problem, suggestion, comment, or you found a bug in my utility, you can send a message to **softvenue@outlook.com**
