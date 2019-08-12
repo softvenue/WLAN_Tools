@@ -101,5 +101,25 @@ namespace WLAN_Tools
                 }
             }
         }
+
+        public void Ping(string host, int attempts, int timeout)
+        {
+            for (int i = 0; i < attempts; i++)
+            {
+                new Thread(delegate ()
+                {
+                    try
+                    {
+                        System.Net.NetworkInformation.Ping ping = new System.Net.NetworkInformation.Ping();
+                        ping.PingCompleted += new PingCompletedEventHandler(PingCompleted);
+                        ping.SendAsync(host, timeout, host);
+                    }
+                    catch
+                    {
+                        
+                    }
+                }).Start();
+            }
+        }
     }
 }
