@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
@@ -18,8 +14,7 @@ namespace WLAN_Tools
             {
                 Console.WriteLine("Rooter IP : {0}", NetworkGateway().ToString());
                 Program s = new Program();
-                s.Ping_all();
-
+                s.Ping_all(); 
             }
             catch (System.NullReferenceException exn)
             {
@@ -89,13 +84,15 @@ namespace WLAN_Tools
             {
                 string hostname = GetHostName(ip);
                 string macaddres = GetMacAddress(ip);
-                string[] arr = new string[3];
+                string NumInterface = ShowNetworkInterfaces();
+                
+                string[] arr = new string[4];
 
                 //store all three parameters
                 arr[0] = ip;
                 arr[1] = hostname;
                 arr[2] = macaddres;
-
+                arr[3] = NumInterface;
 
                 // Logic for Ping Reply Success
                 string GetMac = arr[0].ToString();
@@ -106,10 +103,12 @@ namespace WLAN_Tools
                     {
                         Console.WriteLine(arr[0].ToString());
                         Console.WriteLine(arr[2].ToString());
+                        Console.WriteLine(arr[3].ToString());
                         if (arr[1] != null)
                         {
                             Console.WriteLine(arr[1].ToString());
                         }
+                        
                         Console.WriteLine("__________________");
                     }
 
@@ -178,5 +177,21 @@ namespace WLAN_Tools
             }
 
         }
+
+
+        public static string ShowNetworkInterfaces()
+        {
+            IPGlobalProperties computerProperties = IPGlobalProperties.GetIPGlobalProperties();
+            NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+           
+            if (nics == null || nics.Length < 1)
+            {
+                return "  No network interfaces found.";
+               
+            }
+
+             return "Number of interfaces  : " + nics.Length.ToString();
+           
+            }    
     }
 }
