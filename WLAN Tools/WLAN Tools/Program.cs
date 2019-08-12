@@ -91,16 +91,17 @@ namespace WLAN_Tools
                 string macaddres = GetMacAddress(ip);
                 string[] arr = new string[3];
 
-                
+                //store all three parameters
                 arr[0] = ip;
                 arr[1] = hostname;
                 arr[2] = macaddres;
 
 
-                
+                // Logic for Ping Reply Success
                 string GetMac = arr[0].ToString();
                 try
                 {
+                    //Make sure do not have the same value
                     if (MacAdd != GetMac)
                     {
                         Console.WriteLine(arr[0].ToString());
