@@ -5,7 +5,8 @@ SoftVenue WLAN-Tools :a small tool for scaning wireless networks in your area an
 ## System Requirements
 
 #### Operating System : 
-This utility works on Windows Vista, Windows 7, Windows 8, Windows Server 2008, and Windows 10. 
+
+This tool works on Windows Vista, 7, 8, 10, Server 2008. 
 
 Both x86 and x64 systems are supported. 
 
@@ -22,6 +23,12 @@ Downloads for building and running applications with .NET Framework 4.5 and you 
 
 The WLAN-Tools is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
+See License here : [MIT License](https://github.com/softvenue/WLAN_Tools/blob/master/LICENSE)
+
 ## Feedback
-If you have any problem, suggestion, comment, or you found a bug in my utility, you can send a message to **softvenue@outlook.com**
-or contact the author in person: **iha2007hachi@gmail.com**
+
+If you have any suggestions, comments, send an email to **softvenue@outlook.com**
+
+For bugs and problems, open an issue or see pulls here [Pulls](https://github.com/softvenue/WLAN_Tools/pulls)
+
+Contact the author in person: **iha2007hachi@gmail.com**
